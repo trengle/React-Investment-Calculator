@@ -7,7 +7,8 @@ function deriveData(inputs) {                ;
 export default function DataDisplay({ inputs, ...props }) {
     const derivedData = deriveData(inputs);
 
-    console.log("DATA: ", ...derivedData);
+    console.log("DATA: ", derivedData[0]);
+    // console.log("YEAR: ", derivedData[0].year);
 
     return (
         <>
@@ -21,12 +22,15 @@ export default function DataDisplay({ inputs, ...props }) {
                         <th>Invested Capital</th>
                     </tr>
                 </thead>
+
+                {derivedData.length > 0 && (
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>$16,725</td>
+                        <td>{derivedData[derivedData.length -1].year}</td>
+                        {/* <td>{derivedData && derivedData[0]["valueEndOfYear"]}</td> */}
                     </tr>
                 </tbody>
+                )}
             </table>
         </>
     )
