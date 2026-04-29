@@ -1,20 +1,12 @@
 import { useState } from "react";
-import { calculateInvestmentResults } from "../util/investment.js"
 import InputField from "./InputField.jsx";
 
-const INITIAL_INPUTS = {
-    initialInvestment: null,
-    annualInvestment: null,
-    expectedReturn: null,
-    duration: null
-};
+// function deriveData(inputs) {                ;
+//     return calculateInvestmentResults(inputs);
+// }
 
-function deriveData(inputs) {                ;
-    return calculateInvestmentResults(inputs);
-}
-
-export default function InputDashboard() {
-    const [inputs, setInputs] = useState(INITIAL_INPUTS)
+export default function InputDashboard({ inputs, setInputs, ...props }) {
+    // const [inputs, setInputs] = useState(INITIAL_INPUTS)
 
     function handleChange(e) {
         let curId = e.target.id;
@@ -30,11 +22,10 @@ export default function InputDashboard() {
         })
     };
 
-    const derivedData = deriveData(inputs);
+    // const derivedData = deriveData(inputs);
 
     return (
         <div id="user-input" className="input-group">
-            <p>{console.log(`DATA: ${JSON.stringify(derivedData)}`)}</p>
             <span id="left-inputs">
                 <InputField 
                     id="initialInvestment" 
