@@ -1,0 +1,4 @@
+react investment app todo:
+lookup how to reference assets in "public"
+research why JS is bad at math
+ask copilot to show a basic example of how to lift state, and also ask when NOT to lift state
