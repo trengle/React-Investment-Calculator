@@ -7,12 +7,10 @@ export default function InputDashboard({ inputs, setInputs, ...props }) {
         let curId = e.target.id;
         let newVal = Number(e.target.value);
 
-        setInputs(inputs => {
-            let newInputs = { 
+        setInputs(inputs => ({ 
                 ...inputs,
-                [curId]: newVal }
-            return newInputs
-        })
+                [curId]: newVal 
+        }));
     };
 
     return (

@@ -1,4 +1,4 @@
-export default function InputField({ title, id, onChange, val, ...props }) {
+export default function InputField({ title, id, onChange, ...props }) {
     console.log()
     return (
         <label>
