@@ -6,13 +6,11 @@ export default function InputDashboard({ inputs, setInputs, ...props }) {
     function handleChange(e) {
         let curId = e.target.id;
         let newVal = Number(e.target.value);
-        // console.log(newVal);
-        // console.log(curId);
+
         setInputs(inputs => {
             let newInputs = { 
                 ...inputs,
                 [curId]: newVal }
-            // console.log(newInputs)
             return newInputs
         })
     };
