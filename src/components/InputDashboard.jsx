@@ -1,15 +1,11 @@
-import { useState } from "react";
 import InputField from "./InputField.jsx";
 
 export default function InputDashboard({ inputs, setInputs, ...props }) {
 
-    function handleChange(e) {
-        let curId = e.target.id;
-        let newVal = Number(e.target.value);
-
+    function handleChange(id, val) {
         setInputs(inputs => ({ 
                 ...inputs,
-                [curId]: newVal 
+                [id]: +val 
         }));
     };
 
@@ -19,24 +15,28 @@ export default function InputDashboard({ inputs, setInputs, ...props }) {
                 <InputField 
                     id="initialInvestment" 
                     title="Initial Investment" 
-                    onChange={handleChange} 
+                    value={inputs["initialInvestment"]}
+                    onChange={(e) => handleChange(e.target.id, e.target.value)} 
                 />
                 <InputField 
-                    id="expectedReturn"
-                    title="Expected Return" 
-                    onChange={handleChange} 
+                    id="annualInvestment"
+                    title="Annual Investment" 
+                    value={inputs["annualInvestment"]}
+                    onChange={(e) => handleChange(e.target.id, e.target.value)} 
                 />
             </span>
             <span id="bottom-inputs">
                 <InputField 
-                    id="annualInvestment"
-                    title="Annual Investment" 
-                    onChange={handleChange} 
+                    id="expectedReturn"
+                    title="Expected Return" 
+                    value={inputs["expectedReturn"]}
+                    onChange={(e) => handleChange(e.target.id, e.target.value)} 
                 />
                 <InputField 
                     id="duration" 
                     title="Duration" 
-                    onChange={handleChange} 
+                    value={inputs["duration"]}
+                    onChange={(e) => handleChange(e.target.id, e.target.value)} 
                 />
             </span>
         </div>

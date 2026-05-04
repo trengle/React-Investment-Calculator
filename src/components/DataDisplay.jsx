@@ -22,8 +22,8 @@ export default function DataDisplay({ inputs, ...props }) {
 
             {derivedData.length > 0 && (
             <tbody>
-                {derivedData.map((item, index) => 
-                        <tr key={index}>
+                {derivedData.map((item) => 
+                        <tr key={item["year"]}>
                             <td>{item["year"]}</td>
                             <td>{smartMoneyFormat(item["valueEndOfYear"])}</td>
                             <td>{smartMoneyFormat(item["interest"])}</td>

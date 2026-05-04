@@ -4,10 +4,10 @@ import InputDashboard from "./components/InputDashboard";
 import DataDisplay from "./components/DataDisplay";
 
 const INITIAL_INPUTS = {
-    initialInvestment: null,
-    annualInvestment: null,
-    expectedReturn: null,
-    duration: null
+    initialInvestment: 0,
+    annualInvestment: 0,
+    expectedReturn: 0,
+    duration: 0
 };
 
 function App() {
